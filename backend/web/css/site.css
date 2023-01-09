@@ -1,0 +1,205 @@
+html,
+body {
+    height: 100%;
+}
+
+.content-wrapper {
+    background-color: white !important;
+}
+
+.flex {
+    display: flex;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th,
+.grid-view td:last-child {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media (max-width: 767px) {
+    .nav li > form > button.logout {
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.box {
+    margin-top: 2%;
+}
+
+/* Index reporting */
+
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.mb24 {
+    margin-bottom: 24px;
+}
+
+.rep-box {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #f4f5f7;
+    border-radius: 10px;
+    padding: 0px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    box-shadow: 0px 2px 5px 0px rgba(19, 23, 38, 0.05);
+}
+
+.rep-box-body {
+    padding: 1.5rem 1.5rem;
+}
+
+.text-dark {
+    color: #475f7b !important;
+}
+
+.reporting-small-box {
+    padding: 5px;
+    flex-basis: 25%;
+}
+
+@media only screen and (max-width: 425px) {
+    .reporting-small-box {
+        flex-basis: 100% !important;
+    }
+}
+
+.reporting-icon {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.fill-black,
+.fill-black g {
+    fill: black !important;
+    stroke: black !important;
+}
+
+.center-items {
+    text-align: center;
+    align-items: center;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
