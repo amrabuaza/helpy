@@ -24,6 +24,7 @@ use Yii;
  * @property Category $category
  * @property User $user
  * @property RequestAnswer[] $requestAnswers
+ * @property string $status
  */
 class Request extends ActiveRecord
 {
@@ -60,10 +61,10 @@ class Request extends ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => Yii::t('app','title'),
-            'description' => Yii::t('app','description'),
-            'priority' => Yii::t('app','priority'),
-            'category_id' => Yii::t('app','Category name'),
+            'title' => Yii::t('app', 'title'),
+            'description' => Yii::t('app', 'description'),
+            'priority' => Yii::t('app', 'priority'),
+            'category_id' => Yii::t('app', 'Category name'),
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
@@ -74,7 +75,7 @@ class Request extends ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getRequestAnswer()
+    public function getRequestAnswers()
     {
         return $this->hasMany(RequestAnswer::className(), ['request_id' => 'id']);
     }
@@ -109,5 +110,10 @@ class Request extends ActiveRecord
             $priorities[$key] = Yii::t('app', "request.priority.$value");
         }
         return $priorities;
+    }
+
+    public function getStatus()
+    {
+        return is_null($this->answered_at) ? 'pending' : 'answered';
     }
 }

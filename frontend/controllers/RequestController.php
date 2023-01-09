@@ -14,6 +14,7 @@ use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\BaseObject;
 use yii\base\InvalidArgumentException;
+use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -30,7 +31,7 @@ class RequestController extends Controller
 
     protected function userActions()
     {
-        return ['create', 'view'];
+        return ['create', 'view', 'index'];
     }
 
     protected function guestActions()
@@ -41,6 +42,22 @@ class RequestController extends Controller
     protected function verbs()
     {
         return [];
+    }
+
+    /**
+     * Lists all Article models.
+     * @return mixed
+     */
+    public function actionIndex()
+    {
+        $query = Request::find()->where(['user_id' => Yii::$app->user->id]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        return $this->render('index', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**

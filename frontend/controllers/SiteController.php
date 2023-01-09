@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use common\components\AuthHandler;
 use common\controllers\Controller;
 use common\helper\HelperMethods;
+use common\models\Article;
 use common\models\user\User;
 use frontend\models\LoginForm;
 use frontend\models\ResendVerificationEmailForm;
@@ -86,7 +87,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $articles = Article::find()->where(['status' => Article::ACTIVE_STATUS])->all();
+        return $this->render('index', [
+            'articles' => $articles
+        ]);
     }
 
     /**

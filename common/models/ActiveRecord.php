@@ -8,7 +8,10 @@ use yii\behaviors\TimestampBehavior;
 
 class ActiveRecord extends \yii\db\ActiveRecord
 {
-    public function  behaviors()
+    const ACTIVE_STATUS   = 'active';
+    const INACTIVE_STATUS = 'inactive';
+
+    public function behaviors()
     {
         return [
             [
@@ -36,10 +39,10 @@ class ActiveRecord extends \yii\db\ActiveRecord
      */
     public function getCreatedSince()
     {
-        $oneWeekAgo  = strtotime('-1 week');
+        $oneWeekAgo = strtotime('-1 week');
         $createdDate = $this->created_at;
 
-        if($createdDate > $oneWeekAgo) {
+        if ($createdDate > $oneWeekAgo) {
             return Yii::$app->formatter->asRelativeTime($createdDate);
         } else {
             return Yii::$app->formatter->asDate($createdDate, 'long');

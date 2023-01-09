@@ -54,6 +54,7 @@ return [
                 'home' => 'site/index',
                 'login' => 'site/login',
                 'sign-up' => 'site/signup',
+                'my-requests' => 'request/index',
                 '<controller:[\w-]+>s' => '<controller>',
                 '<controller:[\w-]+>/<id:\d+>' => '<controller>/view',
                 '<controller:[\w-]+>/<id:\d+>' => '<controller>/delete',

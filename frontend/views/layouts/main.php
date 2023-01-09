@@ -55,6 +55,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => Yii::t(Constants::APP, 'signup'), 'url' => ['/site/signup']];
         $menuItems[] = ['label' => Yii::t(Constants::APP, 'login'), 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => Yii::t(Constants::APP, 'my_requests'), 'url' => ['/my-request']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(

@@ -21,7 +21,23 @@ $steps = [
             "slug" => false,
             "created_at" => false,
             "updated_at" => false,
+            "title_ar" => false,
+            "description_ar" => false,
             'status' => false,
+            'description' => [
+                'widget' => alexantr\ckeditor\CKEditor::class,
+                'options' => [
+                    'clientOptions' => [
+                        'extraPlugins' => 'autogrow,colorbutton,colordialog,iframe,justify,showblocks',
+                        'removePlugins' => 'resize',
+                        'autoGrow_maxHeight' => 900,
+                        'stylesSet' => [
+                            ['name' => 'Subscript', 'element' => 'sub'],
+                            ['name' => 'Superscript', 'element' => 'sup'],
+                        ],
+                    ]
+                ],
+            ]
         ]
     ], [
         'model' => $modelAr,
@@ -33,6 +49,20 @@ $steps = [
             "language" => false,
             "created_at" => false,
             "updated_at" => false,
+            'description' => [
+                'widget' => alexantr\ckeditor\CKEditor::class,
+                'options' => [
+                    'clientOptions' => [
+                        'extraPlugins' => 'autogrow,colorbutton,colordialog,iframe,justify,showblocks',
+                        'removePlugins' => 'resize',
+                        'autoGrow_maxHeight' => 900,
+                        'stylesSet' => [
+                            ['name' => 'Subscript', 'element' => 'sub'],
+                            ['name' => 'Superscript', 'element' => 'sup'],
+                        ],
+                    ]
+                ],
+            ]
         ]
     ],
 ];

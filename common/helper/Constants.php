@@ -18,7 +18,7 @@ abstract class Constants
     const APP = 'app';
     const MODEL = 'model';
 
-    const USER_DEFAULT = '/images/user-profile-default.png';
+    const USER_DEFAULT = '/img/user-profile-default.png';
     const ACTIVE = 'active';
 
     const NO = "no";
