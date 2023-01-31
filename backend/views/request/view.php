@@ -3,6 +3,7 @@
 use common\helper\Constants;
 use common\models\Request;
 use yii\helpers\Html;
+use yii\web\JsExpression;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -26,6 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'description',
+            'phone_number',
             [
                 'label' => 'Priority',
                 'value' => Request::PRIORITIES[$model->priority]
@@ -47,5 +49,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_at',
         ],
     ]) ?>
+
+    <?php
+    echo \pigolab\locationpicker\LocationPickerWidget::widget([
+        'key' => 'AIzaSyBaSSGZhnqDf3-jB7zJYXGiS5JCjTNL4U0',	// optional , Your can also put your google map api key
+        'options' => [
+            'style' => 'width: 50%; height: 400px', // map canvas width and height
+        ] ,
+        'clientOptions' => [
+            'location' => [
+                'latitude'  => $model->latitude ,
+                'longitude' => $model->longitude,
+            ],
+            'radius'    => 300,
+            'inputBinding' => [
+                'latitudeInput'     => new JsExpression("$('#us2-lat')"),
+                'longitudeInput'    => new JsExpression("$('#us2-lon')"),
+                'radiusInput'       => new JsExpression("$('#us2-radius')"),
+                'locationNameInput' => new JsExpression("$('#us2-address')")
+            ]
+        ]
+    ]);
+    ?>
 
 </div>

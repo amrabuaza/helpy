@@ -80,6 +80,8 @@ class RequestController extends Controller
      */
     public function actionCreate()
     {
+        $longitude = 35.851479;
+        $latitude = 32.551445;
         $model = new Request();
         $model->user_id = Yii::$app->user->id;
         if ($model->load(Yii::$app->request->post(), 'Request') && $model->save()) {
@@ -87,7 +89,9 @@ class RequestController extends Controller
         }
 
         return $this->render('create', [
-            'model' => $model,
+            'model'     => $model,
+            'longitude' => $longitude,
+            'latitude'  => $latitude
         ]);
     }
 

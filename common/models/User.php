@@ -30,6 +30,7 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_DELETED = 0;
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
+    const TYPE_ROOT = "root";
     public $password;
 
     /**
@@ -255,5 +256,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public function isRoot()
+    {
+        return $this->user_type == self::TYPE_ROOT;
     }
 }

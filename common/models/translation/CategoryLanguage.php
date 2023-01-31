@@ -59,7 +59,7 @@ class CategoryLanguage extends ActiveRecord
     }
 
     /**
-     * Gets query for [[MainCategory]].
+     * Gets query for [[Category]].
      *
      * @return \yii\db\ActiveQuery
      */

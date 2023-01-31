@@ -34,7 +34,7 @@ $user = User::findOne(Yii::$app->user->id);
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget' => 'tree'],
                 'items' => [
                     ['label' => 'Dashboard', 'options' => ['class' => 'header']],
-                    ['label' => 'Admins', 'icon' => 'users', 'url' => ['/user/index?type=' . HelperMethods::convertStringToUrlString(User::TYPE_ADMIN)],],
+                    ['label' => 'Admins', 'visible' => Yii::$app->user->identity->isRoot(), 'icon' => 'users', 'url' => ['/user/index?type=' . HelperMethods::convertStringToUrlString(User::TYPE_ADMIN)],],
                     ['label' => 'Articles', 'icon' => 'list', 'url' => ['/article']],
                     ['label' => 'Categories', 'icon' => 'list', 'url' => ['/categorie']],
                     ['label' => 'Requests', 'icon' => 'ticket', 'url' => ['/request']],

@@ -25,7 +25,7 @@ $user = Yii::$app->dynamicLogin->GetUserFromCookie();
 
 <div class="login-box">
     <div class="login-logo">
-        Yii2 template
+        Helpy
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
